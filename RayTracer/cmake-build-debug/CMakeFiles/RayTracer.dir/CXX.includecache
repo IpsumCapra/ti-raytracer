@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/otacon/Documents/School/Programming/RayTracer/main.cpp
+iostream
+-
+types.h
+/home/otacon/Documents/School/Programming/RayTracer/types.h
+
+/home/otacon/Documents/School/Programming/RayTracer/types.h
+
