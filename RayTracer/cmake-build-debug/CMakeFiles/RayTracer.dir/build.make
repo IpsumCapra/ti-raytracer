@@ -129,6 +129,12 @@ RayTracer: CMakeFiles/RayTracer.dir/main.cpp.o
 RayTracer: CMakeFiles/RayTracer.dir/basic_objects.cpp.o
 RayTracer: CMakeFiles/RayTracer.dir/types.cpp.o
 RayTracer: CMakeFiles/RayTracer.dir/build.make
+RayTracer: /usr/lib/libOpenGL.so
+RayTracer: /usr/lib/libGLX.so
+RayTracer: /usr/lib/libGLU.so
+RayTracer: /usr/lib/libglut.so
+RayTracer: /usr/lib/libXmu.so
+RayTracer: /usr/lib/libXi.so
 RayTracer: CMakeFiles/RayTracer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/otacon/Documents/School/Programming/RayTracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable RayTracer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RayTracer.dir/link.txt --verbose=$(VERBOSE)

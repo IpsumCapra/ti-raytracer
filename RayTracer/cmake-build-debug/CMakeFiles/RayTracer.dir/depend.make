@@ -5,9 +5,11 @@ CMakeFiles/RayTracer.dir/basic_objects.cpp.o: ../basic_objects.cpp
 CMakeFiles/RayTracer.dir/basic_objects.cpp.o: ../basic_objects.h
 CMakeFiles/RayTracer.dir/basic_objects.cpp.o: ../types.h
 
+CMakeFiles/RayTracer.dir/main.cpp.o: ../basic_objects.h
 CMakeFiles/RayTracer.dir/main.cpp.o: ../main.cpp
 CMakeFiles/RayTracer.dir/main.cpp.o: ../types.h
 
+CMakeFiles/RayTracer.dir/types.cpp.o: ../basic_objects.h
 CMakeFiles/RayTracer.dir/types.cpp.o: ../types.cpp
 CMakeFiles/RayTracer.dir/types.cpp.o: ../types.h
 

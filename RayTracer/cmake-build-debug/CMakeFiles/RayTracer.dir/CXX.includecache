@@ -6,11 +6,31 @@
 
 #IncludeRegexTransform: 
 
+/home/otacon/Documents/School/Programming/RayTracer/basic_objects.h
+types.h
+/home/otacon/Documents/School/Programming/RayTracer/types.h
+iostream
+-
+
 /home/otacon/Documents/School/Programming/RayTracer/main.cpp
+vector
+-
 iostream
 -
 types.h
 /home/otacon/Documents/School/Programming/RayTracer/types.h
+basic_objects.h
+/home/otacon/Documents/School/Programming/RayTracer/basic_objects.h
+time.h
+/home/otacon/Documents/School/Programming/RayTracer/time.h
+GL/glut.h
+-
 
 /home/otacon/Documents/School/Programming/RayTracer/types.h
+vector
+-
+cstddef
+-
+string
+-
 

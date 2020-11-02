@@ -1,4 +1,5 @@
 #include "types.h"
+#include <iostream>
 #ifndef BASIC_OBJECTS_H
 #define BASIC_OBJECTS_H
 
@@ -7,6 +8,8 @@ namespace raytracer {
     class Object {
     public:
         Object(Transform transform, Material material);
+
+        virtual bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) const {};
 
         Transform transform;
         Material material;
@@ -17,7 +20,13 @@ namespace raytracer {
     };
 
     class Sphere : public Object {
+    public:
+        Sphere(Transform transform, float radius, Material material);
 
+        //radius and radius^2 of sphere.
+        float radius, radius2;
+
+        bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) const override;
     };
 
     class Surface: public Object {
