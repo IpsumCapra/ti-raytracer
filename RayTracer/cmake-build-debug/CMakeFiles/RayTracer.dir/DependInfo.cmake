@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/otacon/Documents/School/Programming/RayTracer/basic_objects.cpp" "/home/otacon/Documents/School/Programming/RayTracer/cmake-build-debug/CMakeFiles/RayTracer.dir/basic_objects.cpp.o"
-  "/home/otacon/Documents/School/Programming/RayTracer/main.cpp" "/home/otacon/Documents/School/Programming/RayTracer/cmake-build-debug/CMakeFiles/RayTracer.dir/main.cpp.o"
-  "/home/otacon/Documents/School/Programming/RayTracer/types.cpp" "/home/otacon/Documents/School/Programming/RayTracer/cmake-build-debug/CMakeFiles/RayTracer.dir/types.cpp.o"
+  "C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.cpp" "C:/Users/Samue/Desktop/ti-raytracer/RayTracer/cmake-build-debug/CMakeFiles/RayTracer.dir/basic_objects.cpp.obj"
+  "C:/Users/Samue/Desktop/ti-raytracer/RayTracer/main.cpp" "C:/Users/Samue/Desktop/ti-raytracer/RayTracer/cmake-build-debug/CMakeFiles/RayTracer.dir/main.cpp.obj"
+  "C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.cpp" "C:/Users/Samue/Desktop/ti-raytracer/RayTracer/cmake-build-debug/CMakeFiles/RayTracer.dir/types.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

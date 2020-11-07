@@ -3,7 +3,6 @@
 #include <cmath>
 #include <fstream>
 #include <iostream>
-#include <GL/glut.h>
 
 #define MAX_RAY_DEPTH 5
 
@@ -102,37 +101,11 @@ void ImageToFile::render() {
 
 //IMAGE TO OPENGL
 void ImageToOpenGL::display() {
-    glClear(GL_COLOR_BUFFER_BIT);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluOrtho2D(0.0, image.width, image.height, 0.0);
 
-
-    std::cout << "Starting render... ";
-
-    glBegin(GL_POINTS);
-
-    for (auto y = 0; y < image.height; y++) {
-        for (auto x = 0; y < image.width; x++) {
-
-            glColor3f(10, 10, 10);
-            glVertex2i(x, y);
-
-            glFlush();
-        }
-    }
-
-    glEnd();
-
-    std::cout << "Done!\n";
 }
 
 void ImageToOpenGL::render() {
-    glutInitWindowPosition(80, 80);
-    glutInitWindowSize(image.width, image.height);
-    glutCreateWindow("OpenGL Render");
-    display();
-    while (true) {}
+
 }
 
 //TRANSFORM
@@ -159,21 +132,21 @@ float RayTracer::mix(const float &a, const float &b, const float &mix) {
     return b * mix + a * (1 - mix);
 }
 
-Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, const std::vector<Sphere> &objects,
+Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, std::vector<Object*> &objects,
                          const int &depth) {
     float tNear = INFINITY;
 
-    const Object *object = NULL;
+    const Object* object = NULL;
 
     //std::cout << objects.size() << std::endl;
 
     for (unsigned i = 0; i < objects.size(); ++i) {
         float t0 = INFINITY, t1 = INFINITY;
-        if (objects[i].intersect(rayOrigin, rayDirection, t0, t1)) {
+        if (objects[i]->intersect(rayOrigin, rayDirection, t0, t1)) {
             if (t0 < 0) t0 = t1;
             if (t0 < tNear) {
                 tNear = t0;
-                object = &objects[i];
+                object = objects[i];
             }
         }
     }
@@ -218,22 +191,22 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
     } else {
         // it's a diffuse object, no need to raytrace any further
         for (unsigned i = 0; i < objects.size(); ++i) {
-            if (objects[i].material.emissionColor.magnitude() > 0) {
+            if (objects[i]->material.emissionColor.magnitude() > 0) {
                 // this is a light
                 Vector3 transmission(1, 1, 1);
-                Vector3 lightDirection = objects[i].transform.position - phit;
+                Vector3 lightDirection = objects[i]->transform.position - phit;
                 lightDirection.normalize();
                 for (unsigned j = 0; j < objects.size(); ++j) {
                     if (i != j) {
                         float t0, t1;
-                        if (objects[j].intersect(phit + nhit * bias, lightDirection, t0, t1)) {
+                        if (objects[j]->intersect(phit + nhit * bias, lightDirection, t0, t1)) {
                             transmission = Vector3(0, 0, 0);
                             break;
                         }
                     }
                 }
                 surfaceColor += transmission * object->material.color *
-                                std::max(float(0), nhit.dot(lightDirection)) * objects[i].material.emissionColor;
+                                std::max(float(0), nhit.dot(lightDirection)) * objects[i]->material.emissionColor;
             }
         }
     }
@@ -241,7 +214,7 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
     return surfaceColor + object->material.emissionColor;
 }
 
-void RayTracer::render(const std::vector<Sphere> &objects) {
+void RayTracer::render(std::vector<Object*> &objects) {
     printf("Starting render. \n");
     image = Image(640, 480);
 

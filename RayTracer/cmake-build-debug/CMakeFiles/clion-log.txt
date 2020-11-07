@@ -1,5 +1,4 @@
-/home/otacon/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7319.72/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/otacon/Documents/School/Programming/RayTracer
--- Found GLUT: /usr/lib/libglut.so  
+"C:\Program Files\JetBrains\CLion 2019.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Samue\Desktop\ti-raytracer\RayTracer
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/otacon/Documents/School/Programming/RayTracer/cmake-build-debug
+-- Build files have been written to: C:/Users/Samue/Desktop/ti-raytracer/RayTracer/cmake-build-debug

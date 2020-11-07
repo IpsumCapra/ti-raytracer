@@ -6,27 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/home/otacon/Documents/School/Programming/RayTracer/basic_objects.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.cpp
+basic_objects.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.h
+iostream
+-
+cmath
+-
+
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.h
 types.h
-/home/otacon/Documents/School/Programming/RayTracer/types.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.h
 iostream
 -
 
-/home/otacon/Documents/School/Programming/RayTracer/main.cpp
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/main.cpp
 vector
 -
 iostream
 -
 types.h
-/home/otacon/Documents/School/Programming/RayTracer/types.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.h
 basic_objects.h
-/home/otacon/Documents/School/Programming/RayTracer/basic_objects.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.h
 time.h
-/home/otacon/Documents/School/Programming/RayTracer/time.h
-GL/glut.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/time.h
+
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.cpp
+types.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.h
+basic_objects.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.h
+cmath
+-
+fstream
+-
+iostream
 -
 
-/home/otacon/Documents/School/Programming/RayTracer/types.h
+C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.h
 vector
 -
 cstddef

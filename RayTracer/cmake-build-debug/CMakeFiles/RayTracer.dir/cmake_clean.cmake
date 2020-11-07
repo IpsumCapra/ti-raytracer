@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/RayTracer.dir/basic_objects.cpp.o"
-  "CMakeFiles/RayTracer.dir/main.cpp.o"
-  "CMakeFiles/RayTracer.dir/types.cpp.o"
-  "RayTracer"
+  "CMakeFiles/RayTracer.dir/main.cpp.obj"
+  "CMakeFiles/RayTracer.dir/basic_objects.cpp.obj"
+  "CMakeFiles/RayTracer.dir/types.cpp.obj"
   "RayTracer.pdb"
+  "RayTracer.exe"
+  "RayTracer.exe.manifest"
+  "libRayTracer.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

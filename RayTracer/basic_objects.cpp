@@ -16,7 +16,7 @@ Sphere::Sphere(Transform transform, float radius, Material material) : Object(tr
     Sphere::radius2 = radius * radius;
 }
 
-bool Sphere::intersect(const Vector3 &rayOrigin, const Vector3 &rayDirection, float &t0, float &t1) const {
+bool Sphere::intersect(const Vector3 &rayOrigin, const Vector3 &rayDirection, float &t0, float &t1) {
     Vector3 l = transform.position - rayOrigin;
 
     float tca = l.dot(rayDirection);

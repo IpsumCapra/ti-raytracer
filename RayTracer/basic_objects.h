@@ -9,7 +9,7 @@ namespace raytracer {
     public:
         Object(Transform transform, Material material);
 
-        virtual bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) const {};
+        virtual bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) = 0;
 
         Transform transform;
         Material material;
@@ -26,13 +26,19 @@ namespace raytracer {
         //radius and radius^2 of sphere.
         float radius, radius2;
 
-        bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) const override;
+        bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) override;
     };
 
     class Surface: public Object {
     };
 
     class Light: public Object {
+
+    };
+
+    class Polygon: public Object {
+
+        bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) override;
     };
 }
 
