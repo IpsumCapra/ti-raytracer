@@ -231,7 +231,7 @@ void RayTracer::render(std::vector<Object*> &objects) {
     }
     printf("You still with me?\n");
 
-    ImageToFile imgtofile(imageOutput.name + ".ppm", "ppm");
+    ImageToFile imgtofile("meep.ppm", "ppm");
 
     imgtofile.image = image;
     imgtofile.render();
