@@ -15,8 +15,23 @@ namespace raytracer {
         Material material;
     };
 
-    class Cube : public Object {
+    class Polygon: public Object {
+    public:
+        Polygon(Transform transform, Vector3 p0, Vector3 p1, Vector3 p2, Material material);
 
+        Vector3 p0, p1, p2;
+
+        bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) override;
+    };
+
+    class Cube : public Object {
+    public:
+        Cube(Transform transform, float width, Material material);
+
+        float width;
+        std::vector<Polygon> polygons;
+
+        bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) override;
     };
 
     class Sphere : public Object {
@@ -34,15 +49,6 @@ namespace raytracer {
 
     class Light: public Object {
 
-    };
-
-    class Polygon: public Object {
-    public:
-        Polygon(Transform transform, Vector3 p0, Vector3 p1, Vector3 p2, Material material);
-
-        Vector3 p0, p1, p2;
-
-        bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) override;
     };
 }
 
