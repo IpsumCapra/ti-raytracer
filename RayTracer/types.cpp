@@ -39,9 +39,7 @@ void Vector3::normalize() {
 }
 
 //IMAGE
-Image::Image(unsigned int width, unsigned int height) {
-    Image::width = width;
-    Image::height = height;
+Image::Image(unsigned int width, unsigned int height): width(width), height(height) {
 }
 
 
@@ -50,9 +48,7 @@ bool Image::valid() {
 }
 
 //IMAGE OUTPUT
-ImageOutput::ImageOutput(Image image, std::string name) : image(1, 1) {
-    ImageOutput::image = image;
-    ImageOutput::name = name;
+ImageOutput::ImageOutput(Image image, std::string name) : image(image), name(name) {
 }
 
 //IMAGE TO FILE
@@ -60,8 +56,7 @@ ImageToFile::ImageToFile(Image image, std::string name, std::string type) : Imag
     ImageToFile::type = type;
 }
 
-ImageToFile::ImageToFile(std::string name, std::string type) : ImageOutput(Image(0, 0), name) {
-    ImageToFile::type = type;
+ImageToFile::ImageToFile(std::string name, std::string type) : ImageOutput(Image(0, 0), name), type(type) {
 }
 
 ImageToOpenGL::ImageToOpenGL(Image image, std::string name) : ImageOutput(image, name) {}
@@ -124,7 +119,7 @@ Material::Material(Vector3 color, Vector3 emissionColor, float transparency, flo
 }
 
 //RAYTRACER
-RayTracer::RayTracer(ImageOutput &imageOutput) : image(0, 0), imageOutput(imageOutput) {
+RayTracer::RayTracer(ImageOutput &imageOutput, unsigned int width, unsigned int height): image(width, height), imageOutput(imageOutput), width(width), height(height) {
 }
 
 float RayTracer::mix(const float &a, const float &b, const float &mix) {
@@ -215,10 +210,9 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
 
 void RayTracer::render(std::vector<Object*> &objects) {
     printf("Starting render. \n");
-    image = Image(640, 480);
 
-    auto width = image.width;
-    auto height = image.height;
+    image = Image(width, height);
+
 
     float invWidth = 1 / float(width), invHeight = 1 / float(height);
     float fov = 30, aspectratio = width / float(height);

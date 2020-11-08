@@ -121,10 +121,12 @@ namespace raytracer {
 
     class RayTracer {
     public:
-        RayTracer(ImageOutput &imageOutput);
+        RayTracer(ImageOutput &imageOutput, unsigned int width, unsigned int height);
 
         ImageOutput imageOutput;
         Image image;
+        unsigned int width;
+        unsigned int height;
         Vector3 trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, std::vector<Object*> &objects, const int &depth);
         float mix(const float &a, const float &b, const float &mix);
         void render(std::vector<Object*> &objects);

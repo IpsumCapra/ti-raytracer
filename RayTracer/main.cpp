@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
 
     ray::ImageToFile imgToFile("Test", "ppm");
 
-    ray::RayTracer rayTracer(imgToFile);
+    ray::RayTracer rayTracer(imgToFile, 640, 180);
 
     rayTracer.render(objects);
 }
