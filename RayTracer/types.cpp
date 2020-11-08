@@ -29,6 +29,16 @@ float Vector3::dot(const Vector3 &vector) const {
     return x * vector.x + y * vector.y + z * vector.z;
 }
 
+Vector3 Vector3::cross(const Vector3 &vector) const {
+    //cross_P[0] = vect_A[1] * vect_B[2] - vect_A[2] * vect_B[1];
+    //cross_P[1] = vect_A[2] * vect_B[0] - vect_A[0] * vect_B[2];
+    //cross_P[2] = vect_A[0] * vect_B[1] - vect_A[1] * vect_B[0];
+    float f0 = y * vector.z - z * vector.y;
+    float f1 = z * vector.x - x * vector.z;
+    float f2 = x * vector.y - y * vector.x;
+    return Vector3(f0, f1, f2);
+}
+
 void Vector3::normalize() {
     auto m = magnitude();
     if (m > 0) {

@@ -17,6 +17,7 @@ namespace raytracer {
         float magnitude() const;
         void normalize();
         float dot(const Vector3&) const;
+        Vector3 cross(const Vector3&) const;
 
         float x;
         float y;

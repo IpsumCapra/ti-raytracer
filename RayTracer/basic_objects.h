@@ -37,6 +37,10 @@ namespace raytracer {
     };
 
     class Polygon: public Object {
+    public:
+        Polygon(Transform transform, Vector3 p0, Vector3 p1, Vector3 p2, Material material);
+
+        Vector3 p0, p1, p2;
 
         bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) override;
     };

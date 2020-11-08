@@ -33,10 +33,17 @@ int main(int argc, char** argv) {
     sphere3.material.transparency = 1;
     sphere3.transform.position = ray::Vector3(0, -2, -18);
 
-    objects.push_back(&sphere);
-    objects.push_back(&sphere1);
-    objects.push_back(&sphere2);
-    objects.push_back(&sphere3);
+    //objects.push_back(&sphere);
+    //objects.push_back(&sphere1);
+    //objects.push_back(&sphere2);
+    //objects.push_back(&sphere3);
+
+    auto p0 = ray::Vector3(0, -2, -18);
+    auto p1 = ray::Vector3(-3, -2, -18);
+    auto p2 = ray::Vector3(-3, 5, -18);
+    ray::Polygon polygon1(transform, p0, p1, p2, material);
+    polygon1.transform.position = ray::Vector3(0, 0, 0);
+    objects.push_back(&polygon1);
 
     ray::ImageToFile imgToFile("Test", "ppm");
 
