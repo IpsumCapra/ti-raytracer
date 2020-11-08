@@ -30,19 +30,19 @@ Cube::Cube(Transform transform, float width, Material material) : Object(transfo
     Polygon polygon9(transform, p1, p3, p2, material);
     Polygon polygon10(transform, p4, p5, p6, material);
     Polygon polygon11(transform, p4, p6, p7, material);
-    polygon0.transform.position = transform.position;
-    polygon1.transform.position = transform.position;
-    polygon2.transform.position = transform.position;
-    polygon3.transform.position = transform.position;
-    polygon4.transform.position = transform.position;
-    polygon5.transform.position = transform.position;
-    polygon6.transform.position = transform.position;
-    polygon7.transform.position = transform.position;
-    polygon8.transform.position = transform.position;
-    polygon9.transform.position = transform.position;
-    polygon10.transform.position = transform.position;
-    polygon11.transform.position = transform.position;
-    //polygon11.transform.position = Vector3(0, 0, 18);
+    polygon0.transform.position = Vector3(0, 0, 0);
+    polygon1.transform.position = Vector3(0, 0, 0);
+    polygon2.transform.position = Vector3(0, 0, 0);
+    polygon3.transform.position = Vector3(0, 0, 0);
+    polygon4.transform.position = Vector3(0, 0, 0);
+    polygon5.transform.position = Vector3(0, 0, 0);
+    polygon6.transform.position = Vector3(0, 0, 0);
+    polygon7.transform.position = Vector3(0, 0, 0);
+    polygon8.transform.position = Vector3(0, 0, 0);
+    polygon9.transform.position = Vector3(0, 0, 0);
+    polygon10.transform.position = Vector3(0, 0, 0);
+    polygon11.transform.position = Vector3(0, 0, 0);
+    //polygon11.transform.position = Vector3(0, 0, 0);
     polygons.push_back(polygon0);
     polygons.push_back(polygon1);
     polygons.push_back(polygon2);
@@ -58,6 +58,8 @@ Cube::Cube(Transform transform, float width, Material material) : Object(transfo
 }
 
 bool Cube::intersect(const Vector3 &rayOrigin, const Vector3 &rayDirection, float &t0, float &t1) {
+    Vector3 l = rayOrigin - transform.position; // Different order..?
+
     float t0temp = INFINITY, t1temp = INFINITY;
     /*
     for (Polygon polygon: polygons) {
@@ -70,7 +72,7 @@ bool Cube::intersect(const Vector3 &rayOrigin, const Vector3 &rayDirection, floa
     Polygon* object = NULL;
 
     for (Polygon polygon: polygons) {
-        if (polygon.intersect(rayOrigin, rayDirection, t0temp, t1temp)) {
+        if (polygon.intersect(l, rayDirection, t0temp, t1temp)) {
             if (t0temp < 0) t0temp = t1temp;
             if (t0temp < tNear) {
                 tNear = t0temp;
