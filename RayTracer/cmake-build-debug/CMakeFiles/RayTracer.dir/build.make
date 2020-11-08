@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2019.2\bin\cmake\win\bin\cmake.exe" -E re
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Samue\Desktop\ti-raytracer\RayTracer
+CMAKE_SOURCE_DIR = C:\Users\Samue\ti-raytracer\RayTracer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Samue\Desktop\ti-raytracer\RayTracer\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Samue\ti-raytracer\RayTracer\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RayTracer.dir/depend.make
@@ -58,42 +58,42 @@ include CMakeFiles/RayTracer.dir/flags.make
 
 CMakeFiles/RayTracer.dir/main.cpp.obj: CMakeFiles/RayTracer.dir/flags.make
 CMakeFiles/RayTracer.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Samue\Desktop\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RayTracer.dir/main.cpp.obj"
-	D:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\RayTracer.dir\main.cpp.obj -c C:\Users\Samue\Desktop\ti-raytracer\RayTracer\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Samue\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RayTracer.dir/main.cpp.obj"
+	D:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\RayTracer.dir\main.cpp.obj -c C:\Users\Samue\ti-raytracer\RayTracer\main.cpp
 
 CMakeFiles/RayTracer.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RayTracer.dir/main.cpp.i"
-	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Samue\Desktop\ti-raytracer\RayTracer\main.cpp > CMakeFiles\RayTracer.dir\main.cpp.i
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Samue\ti-raytracer\RayTracer\main.cpp > CMakeFiles\RayTracer.dir\main.cpp.i
 
 CMakeFiles/RayTracer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RayTracer.dir/main.cpp.s"
-	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Samue\Desktop\ti-raytracer\RayTracer\main.cpp -o CMakeFiles\RayTracer.dir\main.cpp.s
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Samue\ti-raytracer\RayTracer\main.cpp -o CMakeFiles\RayTracer.dir\main.cpp.s
 
 CMakeFiles/RayTracer.dir/basic_objects.cpp.obj: CMakeFiles/RayTracer.dir/flags.make
 CMakeFiles/RayTracer.dir/basic_objects.cpp.obj: ../basic_objects.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Samue\Desktop\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RayTracer.dir/basic_objects.cpp.obj"
-	D:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\RayTracer.dir\basic_objects.cpp.obj -c C:\Users\Samue\Desktop\ti-raytracer\RayTracer\basic_objects.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Samue\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RayTracer.dir/basic_objects.cpp.obj"
+	D:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\RayTracer.dir\basic_objects.cpp.obj -c C:\Users\Samue\ti-raytracer\RayTracer\basic_objects.cpp
 
 CMakeFiles/RayTracer.dir/basic_objects.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RayTracer.dir/basic_objects.cpp.i"
-	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Samue\Desktop\ti-raytracer\RayTracer\basic_objects.cpp > CMakeFiles\RayTracer.dir\basic_objects.cpp.i
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Samue\ti-raytracer\RayTracer\basic_objects.cpp > CMakeFiles\RayTracer.dir\basic_objects.cpp.i
 
 CMakeFiles/RayTracer.dir/basic_objects.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RayTracer.dir/basic_objects.cpp.s"
-	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Samue\Desktop\ti-raytracer\RayTracer\basic_objects.cpp -o CMakeFiles\RayTracer.dir\basic_objects.cpp.s
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Samue\ti-raytracer\RayTracer\basic_objects.cpp -o CMakeFiles\RayTracer.dir\basic_objects.cpp.s
 
 CMakeFiles/RayTracer.dir/types.cpp.obj: CMakeFiles/RayTracer.dir/flags.make
 CMakeFiles/RayTracer.dir/types.cpp.obj: ../types.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Samue\Desktop\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RayTracer.dir/types.cpp.obj"
-	D:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\RayTracer.dir\types.cpp.obj -c C:\Users\Samue\Desktop\ti-raytracer\RayTracer\types.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Samue\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RayTracer.dir/types.cpp.obj"
+	D:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\RayTracer.dir\types.cpp.obj -c C:\Users\Samue\ti-raytracer\RayTracer\types.cpp
 
 CMakeFiles/RayTracer.dir/types.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RayTracer.dir/types.cpp.i"
-	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Samue\Desktop\ti-raytracer\RayTracer\types.cpp > CMakeFiles\RayTracer.dir\types.cpp.i
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Samue\ti-raytracer\RayTracer\types.cpp > CMakeFiles\RayTracer.dir\types.cpp.i
 
 CMakeFiles/RayTracer.dir/types.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RayTracer.dir/types.cpp.s"
-	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Samue\Desktop\ti-raytracer\RayTracer\types.cpp -o CMakeFiles\RayTracer.dir\types.cpp.s
+	D:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Samue\ti-raytracer\RayTracer\types.cpp -o CMakeFiles\RayTracer.dir\types.cpp.s
 
 # Object files for target RayTracer
 RayTracer_OBJECTS = \
@@ -111,7 +111,7 @@ RayTracer.exe: CMakeFiles/RayTracer.dir/build.make
 RayTracer.exe: CMakeFiles/RayTracer.dir/linklibs.rsp
 RayTracer.exe: CMakeFiles/RayTracer.dir/objects1.rsp
 RayTracer.exe: CMakeFiles/RayTracer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Samue\Desktop\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable RayTracer.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Samue\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable RayTracer.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\RayTracer.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +124,6 @@ CMakeFiles/RayTracer.dir/clean:
 .PHONY : CMakeFiles/RayTracer.dir/clean
 
 CMakeFiles/RayTracer.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Samue\Desktop\ti-raytracer\RayTracer C:\Users\Samue\Desktop\ti-raytracer\RayTracer C:\Users\Samue\Desktop\ti-raytracer\RayTracer\cmake-build-debug C:\Users\Samue\Desktop\ti-raytracer\RayTracer\cmake-build-debug C:\Users\Samue\Desktop\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles\RayTracer.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Samue\ti-raytracer\RayTracer C:\Users\Samue\ti-raytracer\RayTracer C:\Users\Samue\ti-raytracer\RayTracer\cmake-build-debug C:\Users\Samue\ti-raytracer\RayTracer\cmake-build-debug C:\Users\Samue\ti-raytracer\RayTracer\cmake-build-debug\CMakeFiles\RayTracer.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/RayTracer.dir/depend
 

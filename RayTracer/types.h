@@ -124,7 +124,7 @@ namespace raytracer {
     public:
         RayTracer(ImageOutput &imageOutput);
 
-        ImageOutput imageOutput;
+        ImageOutput* imageOutput;
         Image image;
         Vector3 trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, std::vector<Object*> &objects, const int &depth);
         float mix(const float &a, const float &b, const float &mix);

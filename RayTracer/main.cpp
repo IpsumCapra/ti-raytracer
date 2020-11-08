@@ -13,11 +13,11 @@ int main(int argc, char** argv) {
     ray::Material material(ray::Vector3(.2, .1, 1), ray::Vector3(0), 1, 1);
     ray::Sphere sphere (transform, 2.0f, material);
 
-    ray::Sphere sphere1 (transform, 10, material);
+    ray::Sphere sphere1 (transform, 30, material);
 
-    sphere1.transform.position = ray::Vector3(2, -3, -20);
+    sphere1.transform.position = ray::Vector3(0, -3, -80);
     sphere1.material.color = ray::Vector3(.2);
-    sphere1.material.emissionColor = ray::Vector3(0);
+    sphere1.material.emissionColor = ray::Vector3(.4);
 
     ray::Sphere sphere2(transform, 2, material);
 
@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
     sphere3.material.transparency = 1;
     sphere3.transform.position = ray::Vector3(0, -2, -18);
 
-    objects.push_back(&sphere);
+    objects.push_back(&sphere1);
     //objects.push_back(&sphere1);
     //objects.push_back(&sphere2);
     //objects.push_back(&sphere3);
@@ -53,14 +53,15 @@ int main(int argc, char** argv) {
     polygon2.transform.position = ray::Vector3(0, 0, 18);
     polygon2.material.color = ray::Vector3(.7, .7, 0);
 
-    //objects.push_back(&polygon1);
-    //objects.push_back(&polygon2);
+    objects.push_back(&polygon1);
+    objects.push_back(&polygon2);
 
     // CUBE
     ray::Cube cube1(transform, 3, material);
     cube1.transform.position = ray::Vector3(2, 0, 18);
     cube1.material.color = ray::Vector3(0, .4, 0);
-    cube1.material.transparency = .5;
+    cube1.material.emissionColor = ray::Vector3(.8,.1,.8);
+    cube1.material.transparency = 0;
 
     ray::Cube cube2(transform, 4, material);
     cube2.transform.position = ray::Vector3(-4, 0, 18);
@@ -72,7 +73,7 @@ int main(int argc, char** argv) {
 
 
 
-    ray::ImageToFile imgToFile("Test", "ppm");
+    ray::ImageToFile imgToFile("Test.ppm", "ppm");
 
     ray::RayTracer rayTracer(imgToFile);
 

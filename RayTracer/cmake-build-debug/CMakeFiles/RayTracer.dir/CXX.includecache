@@ -6,37 +6,37 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.cpp
+C:/Users/Samue/ti-raytracer/RayTracer/basic_objects.cpp
 basic_objects.h
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.h
+C:/Users/Samue/ti-raytracer/RayTracer/basic_objects.h
 iostream
 -
 cmath
 -
 
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.h
+C:/Users/Samue/ti-raytracer/RayTracer/basic_objects.h
 types.h
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.h
+C:/Users/Samue/ti-raytracer/RayTracer/types.h
 iostream
 -
 
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/main.cpp
+C:/Users/Samue/ti-raytracer/RayTracer/main.cpp
 vector
 -
 iostream
 -
 types.h
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.h
+C:/Users/Samue/ti-raytracer/RayTracer/types.h
 basic_objects.h
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.h
+C:/Users/Samue/ti-raytracer/RayTracer/basic_objects.h
 time.h
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/time.h
+C:/Users/Samue/ti-raytracer/RayTracer/time.h
 
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.cpp
+C:/Users/Samue/ti-raytracer/RayTracer/types.cpp
 types.h
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.h
+C:/Users/Samue/ti-raytracer/RayTracer/types.h
 basic_objects.h
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/basic_objects.h
+C:/Users/Samue/ti-raytracer/RayTracer/basic_objects.h
 cmath
 -
 fstream
@@ -44,7 +44,7 @@ fstream
 iostream
 -
 
-C:/Users/Samue/Desktop/ti-raytracer/RayTracer/types.h
+C:/Users/Samue/ti-raytracer/RayTracer/types.h
 vector
 -
 cstddef

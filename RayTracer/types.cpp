@@ -134,8 +134,8 @@ Material::Material(Vector3 color, Vector3 emissionColor, float transparency, flo
 }
 
 //RAYTRACER
-RayTracer::RayTracer(ImageOutput &imageOutput) : image(0, 0), imageOutput(Image(0, 0), "") {
-    RayTracer::imageOutput = imageOutput;
+RayTracer::RayTracer(ImageOutput &imageOutput) : image(0, 0), imageOutput() {
+    RayTracer::imageOutput = &imageOutput;
 }
 
 float RayTracer::mix(const float &a, const float &b, const float &mix) {
@@ -161,7 +161,7 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
         }
     }
 
-    if (!object) return Vector3(3);
+    if (!object) return Vector3(1);
     Vector3 surfaceColor(0); // color of the ray/surfaceof the object intersected by the ray
     Vector3 phit = rayOrigin + rayDirection * tNear; // point of intersection
     Vector3 nhit = phit - object->transform.position; // normal at the intersection point
@@ -248,8 +248,6 @@ void RayTracer::render(std::vector<Object*> &objects) {
     }
     printf("You still with me?\n");
 
-    ImageToFile imgtofile("meep.ppm", "ppm");
-
-    imgtofile.image = image;
-    imgtofile.render();
+    imageOutput->image = image;
+    imageOutput->render();
 }
