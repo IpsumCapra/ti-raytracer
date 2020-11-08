@@ -17,6 +17,7 @@ namespace raytracer {
         float magnitude() const;
         void normalize();
         float dot(const Vector3&) const;
+        Vector3 cross(const Vector3&) const;
 
         float x;
         float y;
@@ -123,7 +124,7 @@ namespace raytracer {
     public:
         RayTracer(ImageOutput &imageOutput, unsigned int width, unsigned int height);
 
-        ImageOutput imageOutput;
+        ImageOutput* imageOutput;
         Image image;
         unsigned int width;
         unsigned int height;

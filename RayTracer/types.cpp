@@ -29,6 +29,16 @@ float Vector3::dot(const Vector3 &vector) const {
     return x * vector.x + y * vector.y + z * vector.z;
 }
 
+Vector3 Vector3::cross(const Vector3 &vector) const {
+    //cross_P[0] = vect_A[1] * vect_B[2] - vect_A[2] * vect_B[1];
+    //cross_P[1] = vect_A[2] * vect_B[0] - vect_A[0] * vect_B[2];
+    //cross_P[2] = vect_A[0] * vect_B[1] - vect_A[1] * vect_B[0];
+    float f0 = y * vector.z - z * vector.y;
+    float f1 = z * vector.x - x * vector.z;
+    float f2 = x * vector.y - y * vector.x;
+    return Vector3(f0, f1, f2);
+}
+
 void Vector3::normalize() {
     auto m = magnitude();
     if (m > 0) {
@@ -119,7 +129,12 @@ Material::Material(Vector3 color, Vector3 emissionColor, float transparency, flo
 }
 
 //RAYTRACER
+<<<<<<< HEAD
 RayTracer::RayTracer(ImageOutput &imageOutput, unsigned int width, unsigned int height): image(width, height), imageOutput(imageOutput), width(width), height(height) {
+=======
+RayTracer::RayTracer(ImageOutput &imageOutput) : image(0, 0), imageOutput() {
+    RayTracer::imageOutput = &imageOutput;
+>>>>>>> master
 }
 
 float RayTracer::mix(const float &a, const float &b, const float &mix) {
@@ -145,7 +160,7 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
         }
     }
 
-    if (!object) return Vector3(3);
+    if (!object) return Vector3(1);
     Vector3 surfaceColor(0); // color of the ray/surfaceof the object intersected by the ray
     Vector3 phit = rayOrigin + rayDirection * tNear; // point of intersection
     Vector3 nhit = phit - object->transform.position; // normal at the intersection point
@@ -231,8 +246,6 @@ void RayTracer::render(std::vector<Object*> &objects) {
     }
     printf("You still with me?\n");
 
-    ImageToFile imgtofile("meep.ppm", "ppm");
-
-    imgtofile.image = image;
-    imgtofile.render();
+    imageOutput->image = image;
+    imageOutput->render();
 }
