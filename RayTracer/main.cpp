@@ -38,12 +38,28 @@ int main(int argc, char** argv) {
     //objects.push_back(&sphere2);
     //objects.push_back(&sphere3);
 
-    auto p0 = ray::Vector3(0, -2, -18);
-    auto p1 = ray::Vector3(-3, -2, -18);
-    auto p2 = ray::Vector3(-3, 5, -18);
+    //Backup code
+//    auto p0 = ray::Vector3(0, -2, -18);
+//    auto p1 = ray::Vector3(-3, -2, -18);
+//    auto p2 = ray::Vector3(-3, 5, -18);
+//    ray::Polygon polygon1(transform, p0, p1, p2, material);
+//    polygon1.transform.position = ray::Vector3(0, 0, 0);
+//    objects.push_back(&polygon1);
+
+    auto p0 = ray::Vector3(0, -2, 0);
+    auto p1 = ray::Vector3(-3, -2, 0);
+    auto p2 = ray::Vector3(-3, 5, 0);
     ray::Polygon polygon1(transform, p0, p1, p2, material);
-    polygon1.transform.position = ray::Vector3(0, 0, 0);
+    polygon1.transform.position = ray::Vector3(0, 0, 18);
     objects.push_back(&polygon1);
+
+    auto p3 = ray::Vector3(0, -2, 0);
+    auto p4 = ray::Vector3(0, 5, 0);
+    auto p5 = ray::Vector3(-3, 5, 0);
+    ray::Polygon polygon2(transform, p3, p4, p5, material);
+    polygon2.transform.position = ray::Vector3(0, 0, 18);
+    polygon2.material.color = ray::Vector3(.7, .4, .4);
+    objects.push_back(&polygon2);
 
     ray::ImageToFile imgToFile("Test", "ppm");
 
