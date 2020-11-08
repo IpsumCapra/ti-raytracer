@@ -124,8 +124,7 @@ Material::Material(Vector3 color, Vector3 emissionColor, float transparency, flo
 }
 
 //RAYTRACER
-RayTracer::RayTracer(ImageOutput &imageOutput) : image(0, 0), imageOutput(Image(0, 0), "") {
-    RayTracer::imageOutput = imageOutput;
+RayTracer::RayTracer(ImageOutput &imageOutput) : image(0, 0), imageOutput(imageOutput) {
 }
 
 float RayTracer::mix(const float &a, const float &b, const float &mix) {
@@ -238,7 +237,7 @@ void RayTracer::render(std::vector<Object*> &objects) {
     }
     printf("You still with me?\n");
 
-    ImageToFile imgtofile("meep.ppm", "ppm");
+    ImageToFile imgtofile(imageOutput.name + ".ppm", "ppm");
 
     imgtofile.image = image;
     imgtofile.render();
