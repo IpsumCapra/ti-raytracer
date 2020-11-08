@@ -39,14 +39,12 @@ int main(int argc, char** argv) {
     //objects.push_back(&sphere3);
 
     // POLYGON
-    /*
     auto p0 = ray::Vector3(0, -2, 0);
     auto p1 = ray::Vector3(-3, -2, 0);
     auto p2 = ray::Vector3(-3, 5, 0);
     ray::Polygon polygon1(transform, p0, p1, p2, material);
     polygon1.transform.position = ray::Vector3(0, 0, 18);
     polygon1.material.color = ray::Vector3(.6, 1, 0);
-    objects.push_back(&polygon1);
 
     auto p3 = ray::Vector3(0, -2, 0);
     auto p4 = ray::Vector3(0, 5, 0);
@@ -54,19 +52,22 @@ int main(int argc, char** argv) {
     ray::Polygon polygon2(transform, p3, p4, p5, material);
     polygon2.transform.position = ray::Vector3(0, 0, 18);
     polygon2.material.color = ray::Vector3(.7, .7, 0);
-    objects.push_back(&polygon2);
-     */
+
+    //objects.push_back(&polygon1);
+    //objects.push_back(&polygon2);
 
     // CUBE
-    ray::Cube cube1(transform, 2, material);
-    cube1.transform.position = ray::Vector3(4, -4, 18);
+    ray::Cube cube1(transform, 3, material);
+    cube1.transform.position = ray::Vector3(2, 0, 18);
     cube1.material.color = ray::Vector3(0, .4, 0);
-    objects.push_back(&cube1);
+    cube1.material.transparency = .5;
 
     ray::Cube cube2(transform, 4, material);
     cube2.transform.position = ray::Vector3(-4, 0, 18);
     cube2.material.color = ray::Vector3(.7, .4, .4);
     //cube2.material.albedo = 0.5;
+    
+    objects.push_back(&cube1);
     objects.push_back(&cube2);
 
 

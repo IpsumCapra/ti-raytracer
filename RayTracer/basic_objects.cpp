@@ -42,7 +42,6 @@ Cube::Cube(Transform transform, float width, Material material) : Object(transfo
     polygon9.transform.position = Vector3(0, 0, 0);
     polygon10.transform.position = Vector3(0, 0, 0);
     polygon11.transform.position = Vector3(0, 0, 0);
-    //polygon11.transform.position = Vector3(0, 0, 0);
     polygons.push_back(polygon0);
     polygons.push_back(polygon1);
     polygons.push_back(polygon2);
@@ -61,11 +60,6 @@ bool Cube::intersect(const Vector3 &rayOrigin, const Vector3 &rayDirection, floa
     Vector3 l = rayOrigin - transform.position; // Different order..?
 
     float t0temp = INFINITY, t1temp = INFINITY;
-    /*
-    for (Polygon polygon: polygons) {
-        polygon.intersect(rayOrigin, rayDirection, t0, t1);
-    }
-     */
 
     float tNear = INFINITY;
 
@@ -125,7 +119,6 @@ bool Polygon::intersect(const Vector3 &rayOrigin, const Vector3 &rayDirection, f
     // ray and triangle are parallel if det is close to 0
     const float kEpsilon = 1e-8;
     if (fabs(det) < kEpsilon) return false;
-    //printf("Test1\n");
 
     float invDet = 1 / det;
 
