@@ -44,11 +44,12 @@ namespace raytracer {
         bool intersect(const Vector3 &rayOrigin,const Vector3 &rayDirection, float &t0, float &t1) override;
     };
 
-    class Surface: public Object {
-    };
+    class Light {
+    public:
+        Light(Transform transform, float lightIntensity);
 
-    class Light: public Object {
-
+        Transform transform;
+        float lightIntensity;
     };
 }
 

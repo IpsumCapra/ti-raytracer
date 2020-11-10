@@ -138,3 +138,8 @@ bool Polygon::intersect(const Vector3 &rayOrigin, const Vector3 &rayDirection, f
 
     return true;
 }
+
+//LIGHT
+Light::Light(Transform transform, float lightIntensity): transform(transform), lightIntensity(lightIntensity) {
+
+}

@@ -8,6 +8,8 @@ namespace ray = raytracer;
 
 int main(int argc, char** argv) {
     std::vector<ray::Object*> objects;
+    std::vector<ray::Light*> lights;
+
 
     ray::Transform transform (ray::Vector3(0, 0, -18), ray::Vector3(0));
     ray::Material material(ray::Vector3(.2, .1, 1), ray::Vector3(0), 1, 1);
@@ -24,7 +26,7 @@ int main(int argc, char** argv) {
     sphere2.material.color = ray::Vector3(.4, .4, .4);
     sphere2.material.emissionColor = ray::Vector3(3);
     sphere2.material.transparency = 0;
-    sphere2.transform.position = ray::Vector3(0, 0, -10);
+    sphere2.transform.position = ray::Vector3(0, 0, -18);
 
     ray::Sphere sphere3(transform, 3, material);
 
@@ -33,10 +35,11 @@ int main(int argc, char** argv) {
     sphere3.material.transparency = 1;
     sphere3.transform.position = ray::Vector3(0, -2, -18);
 
+    objects.push_back(&sphere);
     objects.push_back(&sphere1);
-    //objects.push_back(&sphere1);
     //objects.push_back(&sphere2);
     //objects.push_back(&sphere3);
+
 
     // POLYGON
     auto p0 = ray::Vector3(0, -2, 0);
@@ -53,8 +56,9 @@ int main(int argc, char** argv) {
     polygon2.transform.position = ray::Vector3(0, 0, 18);
     polygon2.material.color = ray::Vector3(.7, .7, 0);
 
-    objects.push_back(&polygon1);
-    objects.push_back(&polygon2);
+    //objects.push_back(&polygon1);
+    //objects.push_back(&polygon2);
+
 
     // CUBE
     ray::Cube cube1(transform, 3, material);
@@ -72,10 +76,16 @@ int main(int argc, char** argv) {
     objects.push_back(&cube2);
 
 
+    //LIGHT
+    ray::Light light1(transform, 1);
+    light1.transform.position = ray::Vector3(4, 3, -15);
+
+    lights.push_back(&light1);
+
 
     ray::ImageToFile imgToFile("Test.ppm", "ppm");
 
-    ray::RayTracer rayTracer(imgToFile, 640, 180);
+    ray::RayTracer rayTracer(imgToFile, 640, 480);
 
-    rayTracer.render(objects);
+    rayTracer.render(objects, lights);
 }

@@ -136,8 +136,7 @@ float RayTracer::mix(const float &a, const float &b, const float &mix) {
     return b * mix + a * (1 - mix);
 }
 
-Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, std::vector<Object*> &objects,
-                         const int &depth) {
+Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, std::vector<Object*> &objects, std::vector<Light*> &lights, const int &depth) {
     float tNear = INFINITY;
 
     const Object* object = NULL;
@@ -155,11 +154,34 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
         }
     }
 
-    if (!object) return Vector3(1);
-    Vector3 surfaceColor(0); // color of the ray/surfaceof the object intersected by the ray
+    if (!object) return Vector3(1); // No object in front of ray
+
+    Vector3 surfaceColor(0); // color of the ray/surface of the object intersected by the ray
     Vector3 phit = rayOrigin + rayDirection * tNear; // point of intersection
     Vector3 nhit = phit - object->transform.position; // normal at the intersection point
     nhit.normalize(); // normalize normal direction
+
+
+
+    
+
+    for(unsigned l = 0; l < lights.size(); ++l) {
+        const Object *object2 = NULL;
+        for (unsigned i = 0; i < objects.size(); ++i) {
+            float t0 = INFINITY, t1 = INFINITY;
+            Vector3 rayDirection2 = lights[l]->transform.position - phit;
+            rayDirection2.normalize();
+            auto phit2 = phit + rayDirection2*0.5; // Move hitpoint out of mesh
+            if (objects[i]->intersect(phit2, rayDirection2, t0, t1)) { //if (objects[i]->intersect(rayOrigin, rayDirection, t0, t1)) {
+                // Object in front of ray
+                return Vector3(0);
+            }
+        }
+    }
+
+
+
+
     // If the normal and the view direction are not opposite to each other
     // reverse the normal direction. That also means we are inside the sphere so set
     // the inside bool to true. Finally reverse the sign of IdotN which we want
@@ -167,7 +189,8 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
     float bias = 1e-4; // add some bias to the point from which we will be tracing
     bool inside = false;
 
-    if (rayDirection.dot(nhit) > 0) nhit = -nhit, inside = true;
+    if (rayDirection.dot(nhit) > 0) nhit = -nhit, inside = true; // Check if camera is inside the object
+
     if ((object->material.transparency > 0 || object->material.albedo > 0) && depth < MAX_RAY_DEPTH) {
         float facingratio = -rayDirection.dot(nhit);
         // change the mix value to tweak the effect
@@ -176,7 +199,7 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
         // are already normalized)
         Vector3 reflectionDirection = rayDirection - nhit * 2 * rayDirection.dot(nhit);
         reflectionDirection.normalize();
-        Vector3 reflection = trace(phit + nhit * bias, reflectionDirection, objects, depth + 1);
+        Vector3 reflection = trace(phit + nhit * bias, reflectionDirection, objects, lights, depth + 1);
         Vector3 refraction(0);
         // if the sphere is also transparent compute refraction ray (transmission)
         if (object->material.transparency) {
@@ -185,7 +208,7 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
             float k = 1 - eta * eta * (1 - cosi * cosi);
             Vector3 refractionDirection = rayDirection * eta + nhit * (eta * cosi - sqrt(k));
             refractionDirection.normalize();
-            refraction = trace(phit - nhit * bias, refractionDirection, objects, depth + 1);
+            refraction = trace(phit - nhit * bias, refractionDirection, objects, lights, depth + 1);
         }
         // the result is a mix of reflection and refraction (if the sphere is transparent)
         surfaceColor = (
@@ -218,7 +241,7 @@ Vector3 RayTracer::trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, 
     return surfaceColor + object->material.emissionColor;
 }
 
-void RayTracer::render(std::vector<Object*> &objects) {
+void RayTracer::render(std::vector<Object*> &objects, std::vector<Light*> &lights) {
     printf("Starting render. \n");
 
     image = Image(width, height);
@@ -235,7 +258,7 @@ void RayTracer::render(std::vector<Object*> &objects) {
             float yy = (1 - 2 * ((y + 0.5) * invHeight)) * angle;
             Vector3 rayDirection(xx, yy, -1);
             rayDirection.normalize();
-            Vector3 result = trace(Vector3(0), rayDirection, objects, 0);
+            Vector3 result = trace(Vector3(0), rayDirection, objects, lights, 0);
             image.image.push_back(result);
         }
     }

@@ -7,6 +7,7 @@
 
 namespace raytracer {
     class Object;
+    class Light;
     class Sphere;
 
     class Vector3 {
@@ -128,9 +129,9 @@ namespace raytracer {
         Image image;
         unsigned int width;
         unsigned int height;
-        Vector3 trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, std::vector<Object*> &objects, const int &depth);
+        Vector3 trace(const Vector3 &rayOrigin, const Vector3 &rayDirection, std::vector<Object*> &objects, std::vector<Light*> &lights, const int &depth);
         float mix(const float &a, const float &b, const float &mix);
-        void render(std::vector<Object*> &objects);
+        void render(std::vector<Object*> &objects, std::vector<Light*> &lights);
     };
 }
 
