@@ -129,12 +129,7 @@ Material::Material(Vector3 color, Vector3 emissionColor, float transparency, flo
 }
 
 //RAYTRACER
-<<<<<<< HEAD
-RayTracer::RayTracer(ImageOutput &imageOutput, unsigned int width, unsigned int height): image(width, height), imageOutput(imageOutput), width(width), height(height) {
-=======
-RayTracer::RayTracer(ImageOutput &imageOutput) : image(0, 0), imageOutput() {
-    RayTracer::imageOutput = &imageOutput;
->>>>>>> master
+RayTracer::RayTracer(ImageOutput &imageOutput, unsigned int width, unsigned int height): image(width, height), imageOutput(&imageOutput), width(width), height(height) {
 }
 
 float RayTracer::mix(const float &a, const float &b, const float &mix) {
